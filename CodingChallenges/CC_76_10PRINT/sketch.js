@@ -8,6 +8,7 @@
 let x = 0;
 let y = 0;
 let spacing = 20;
+let bias = 0.9;
 
 function setup() {
   createCanvas(400, 400);
@@ -16,7 +17,7 @@ function setup() {
 
 function draw() {
   stroke(255);
-  if (random(1) < 0.9) {
+  if (random(1) < bias) {
     line(x, y, x + spacing, y + spacing);
   } else {
     line(x, y + spacing, x + spacing, y);
@@ -27,4 +28,10 @@ function draw() {
     y = y + spacing;
   }
 
+}
+
+function mousePressed(){
+  x = 0;
+  y = 0;
+  background(0);
 }
